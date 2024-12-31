@@ -1,0 +1,220 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #dcfce7; /* Verde muy claro navideño */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container Card */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: center;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  /* max-width: 400px; */
+  /* width: 70%; */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card:nth-child(1) {
+  max-width: 400px;
+}
+
+.card:nth-child(2) {
+  padding: 0 2rem;
+}
+
+/* Media query para pantallas más grandes */
+@media (min-width: 768px) {
+  .card {
+    /* width: 70%; */
+    padding: 3rem;
+  }
+}
+
+/* Title */
+.card h1 {
+  font-size: 2rem;
+  color: #166534; /* Verde oscuro navideño */
+  margin-bottom: 1rem;
+  font-weight: 900;
+}
+
+/* Word Display */
+
+@media (min-width: 768px) {
+  .word-display {
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.word-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.word-display {
+  min-height: 72px;
+  display: grid;
+  align-content: center;
+}
+
+.word-img {
+  /* margin-bottom: 1rem; */
+  border-radius: 0.5rem;
+
+  /*! VER SI ESTE CAMBIO APORTA ALGO */
+}
+
+.word-display {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: #dc2626;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.new-word {
+  background-color: #166534; /* Verde oscuro navideño */
+}
+
+.new-word:hover {
+  background-color: #14532d; /* Verde más oscuro */
+}
+
+.reset {
+  background-color: #dc2626; /* Rojo navideño */
+}
+
+.reset:hover {
+  background-color: #b91c1c; /* Rojo más oscuro */
+}
+
+/* Icon inside button */
+.icon {
+  font-size: 1.5rem;
+}
+
+/* Word History */
+.history {
+  /* max-width: 280px; */
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .history {
+    width: 800px;
+  }
+}
+
+.history h2 {
+  color: #166534; /* Verde oscuro navideño */
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.word-history {
+  background-color: #fef3c7; /* Dorado claro navideño */
+  border-radius: 16px;
+  padding: 1rem;
+  max-height: 150px;
+  /* min-height: 60px; */
+  overflow-y: scroll;
+  list-style: none;
+  margin: 0;
+  display: flex;
+  gap: 4px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .word-history {
+    max-height: 54vh;
+  }
+}
+
+.word-history::-webkit-scrollbar {
+  display: none;
+}
+
+.word-history {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.word-history li {
+  color: #fff;
+  font-weight: 700;
+  margin: 0 4px;
+  margin-bottom: 0.5rem;
+  padding: 1em 2em;
+  text-align: center;
+  background-color: #166534; /* Verde oscuro navideño */
+  border-radius: 10px;
+  white-space: nowrap;
+  flex: 1 1 calc(25% - 1rem);
+}
+
+#word-history-container {
+  /* display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap; */
+
+  max-height: 70vh;
+  overflow-y: scroll;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.word-history-container:hover {
+  transform: scale(1.1);
+}
+
+.selected-container {
+  background-color: #e0e0e0 !important;
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
