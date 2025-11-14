@@ -6,6 +6,7 @@ const wordHistoryList = document.getElementById("word-history-container");
 const newWordButton = document.getElementById("new-word-btn");
 const resetButton = document.getElementById("reset-btn");
 const balotera = document.getElementById("balotera");
+const sound = document.getElementById("audioEffect");
 let wordHistory = [];
 
 const modalOverlay = document.getElementById("modal-overlay");
@@ -60,6 +61,10 @@ function getRandomWord() {
   balotera.classList.add("spinning");
   newWordButton.disabled = true;
 
+  // TODO: Hacer coincidir el audio con el tiempo de la animación
+  // sound.currentTime = 2;
+  // sound.play();
+
   // Tiempo total = duración (4s) * repeticiones
   const totalTime = 4000 * randomRepeats;
 
@@ -83,6 +88,7 @@ function getRandomWord() {
 
     balotera.classList.remove("spinning");
     newWordButton.disabled = false;
+    // sound.pause();
   }, totalTime);
 }
 
