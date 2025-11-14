@@ -40,7 +40,7 @@ async function loadWords() {
   }
 }
 
-// Generar una palabra aleatoria con animación
+// Generar una palabra aleatoria
 function getRandomWord() {
   const availableWords = christmasWords.filter((word) => !usedWords.has(word));
 
@@ -51,8 +51,17 @@ function getRandomWord() {
   }
 
   // Animación de la balotera
+  const randomRepeats = Math.floor(Math.random() * 2) + 1;
+
+  imgDisplay.src = "./assets/bingo.webp";
+  imgDisplay.alt = "Imagen de Bingo";
+
+  balotera.style.setProperty("--spin-repeat", randomRepeats);
   balotera.classList.add("spinning");
   newWordButton.disabled = true;
+
+  // Tiempo total = duración (4s) * repeticiones
+  const totalTime = 4000 * randomRepeats;
 
   setTimeout(() => {
     const randomIndex = Math.floor(Math.random() * availableWords.length);
@@ -65,12 +74,8 @@ function getRandomWord() {
       .replaceAll(" ", "_")}.webp`;
     imgDisplay.alt = `Imagen de ${newWord.toLowerCase()}`;
 
-    // Animación de rebote de la imagen
     imgDisplay.classList.add("bouncing");
-
-    setTimeout(() => {
-      imgDisplay.classList.remove("bouncing");
-    }, 600);
+    setTimeout(() => imgDisplay.classList.remove("bouncing"), 600);
 
     wordHistory.push(newWord);
     saveHistoryToLocalStorage();
@@ -78,26 +83,8 @@ function getRandomWord() {
 
     balotera.classList.remove("spinning");
     newWordButton.disabled = false;
-  }, 4000);
+  }, totalTime);
 }
-
-// Restablecer todo
-// function resetEverything() {
-//   if (
-//     confirm(
-//       "¿Estás seguro que deseas reiniciar el juego? Se perderá todo el progreso."
-//     )
-//   ) {
-//     wordDisplay.textContent = "🎅 ¡Presiona el botón! 🎅";
-//     imgDisplay.src = "./assets/bingo.webp";
-//     imgDisplay.alt = "Imagen de Bingo";
-//     wordHistory = [];
-//     usedWords.clear();
-//     newWordButton.disabled = false;
-//     localStorage.removeItem("wordHistory");
-//     updateHistory();
-//   }
-// }
 
 // Restablecer todo
 function resetEverything() {

@@ -162,7 +162,9 @@ body {
 }
 
 .balotera.spinning {
+  /* animation: spin 4s ease-in-out; */
   animation: spin 4s ease-in-out;
+  animation-iteration-count: var(--spin-repeat, 1);
 }
 
 .balotera-base {
