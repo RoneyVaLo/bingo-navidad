@@ -1,46 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bingo Navideño</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Copos de nieve -->
+    <div id="snowflakes"></div>
 
-<body>
+    <!-- Modal de Confirmación -->
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal">
+        <div class="modal-lights">
+          <div class="light"></div>
+          <div class="light"></div>
+          <div class="light"></div>
+          <div class="light"></div>
+          <div class="light"></div>
+        </div>
+
+        <div class="modal-header">
+          <div class="modal-icon">⚠️</div>
+          <h2 class="modal-title">¿Estás Seguro?</h2>
+        </div>
+
+        <p class="modal-message">
+          Estás a punto de reiniciar el juego.<br />
+          <strong>Se perderá todo el progreso actual.</strong><br />
+          ¿Deseas continuar?
+        </p>
+
+        <div class="modal-buttons">
+          <button class="modal-btn modal-btn-cancel" id="modal-cancel">
+            ❌ Cancelar
+          </button>
+          <button class="modal-btn modal-btn-confirm" id="modal-confirm">
+            ✅ Sí, Reiniciar
+          </button>
+        </div>
+      </div>
+    </div>
+
     <section class="container">
-        <div class="card">
-            <h1>Bingo Navideño</h1>
+      <div class="card">
+        <div class="lights">
+          <div class="light"></div>
+          <div class="light"></div>
+          <div class="light"></div>
+          <div class="light"></div>
+          <div class="light"></div>
+        </div>
 
+        <div class="main-title">
+          <span>🎄</span>
+          <h1>Familia VaLo Bingo</h1>
+          <span>🎄</span>
+        </div>
+
+        <div class="balotera-container">
+          <div class="balotera" id="balotera">
             <div class="word-container">
-                <img src="./assets/bingo.jpeg" alt="Imagen de Bingo" width="200" height="200" class="word-img"
-                    id="img-display" />
-                <p class="word-display" id="word-display">
-                    Presiona el
-                    botón!
-                </p>
+              <img
+                src="./assets/bingo.webp"
+                alt="Imagen de Bingo"
+                width="200"
+                height="200"
+                class="word-img"
+                id="img-display"
+              />
             </div>
-
-            <div class="button-group">
-                <button id="new-word-btn" class="btn new-word">
-                    <span class="icon">🎁</span> Nueva Palabra
-                </button>
-                <button id="reset-btn" class="btn reset">
-                    <span class="icon">🔄</span> Reiniciar
-                </button>
-            </div>
+          </div>
+          <div class="balotera-base"></div>
         </div>
 
-        <div class="card">
-            <div class="history">
-                <h2>Historial de Palabras:</h2>
-                <!-- <ul id="word-history" class="word-history"></ul> -->
-                <div id="word-history-container"></div>
-            </div>
+        <p class="word-display" id="word-display">🎅 ¡Presiona el botón! 🎅</p>
+
+        <div class="button-group">
+          <button id="new-word-btn" class="btn new-word">
+            <span class="icon">🎁</span> Nueva Palabra
+          </button>
+          <button id="reset-btn" class="btn reset">
+            <span class="icon">🔄</span> Reiniciar
+          </button>
         </div>
+      </div>
+
+      <div class="card">
+        <div class="lights">
+          <div class="light"></div>
+          <div class="light"></div>
+          <div class="light"></div>
+          <div class="light"></div>
+          <div class="light"></div>
+        </div>
+
+        <div class="history">
+          <h2>🎁 Historial de Palabras 🎁</h2>
+          <div id="word-history-container"></div>
+        </div>
+      </div>
     </section>
-    <script src="script.js"></script>
-</body>
 
+    <script src="./script.js"></script>
+  </body>
 </html>
